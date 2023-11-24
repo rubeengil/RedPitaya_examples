@@ -231,9 +231,12 @@
     SM.param_callbacks["SS_INT_P"] = SM.change_int;
 
 }(window.SM = window.SM || {}, jQuery));
-//NUEVO
- SM.led_state = false;
 
+
+//NUEVO
+SM.param_callbacks["led_state"] = SM.led_state;
+
+ SM.led_state = false;
    // program checks if led_state button was clicked
    $('#led_state').click(function() {
 
@@ -247,12 +250,7 @@
            $('#led_off').hide();
            $('#led_on').show();
            SM.led_state = true;
-       }
-
-       // sends current led state to backend
-       var local = {};
-       local['LED_STATE'] = { value: SM.led_state };
-       SM.ws.send(JSON.stringify({ parameters: local }));
+       }    
    });
 
 //END NUEVO
