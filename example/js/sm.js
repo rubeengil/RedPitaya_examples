@@ -230,7 +230,7 @@
     SM.param_callbacks["SS_STRING_P"] = SM.change_text;
     SM.param_callbacks["SS_INT_P"] = SM.change_int;
 
-}(window.SM = window.SM || {}, jQuery));
+
 
 
 //NUEVO
@@ -258,6 +258,8 @@
         SM.parametersCache["led_state"] = { value: SM.led_state ? 0 : 1 };
         SM.sendParameters();
     });
+
+}(window.SM = window.SM || {}, jQuery));
 
 //END NUEVO
 
