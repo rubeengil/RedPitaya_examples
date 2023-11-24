@@ -265,6 +265,15 @@ $(function() {
         SM.parametersCache["SS_INT_P"] = { value: 1 };
         SM.sendParameters();
     });
+    
+    $('#toggleButton').on('click', function(ev) {
+    var led = document.getElementById('led');
+    if (led.classList.contains('on')) {
+        led.classList.remove('on');
+    } else {
+        led.classList.add('on');
+    }
+    });
 
     // Init help
     Help.init(helpListSM);
