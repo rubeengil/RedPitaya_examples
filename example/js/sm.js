@@ -272,6 +272,10 @@ $(function() {
             led.classList.add('on');
         }
         SM.sendParameters();
+
+        var local = {};
+        local['LED_STATE'] = { value: SM.led_state };
+        SM.ws.send(JSON.stringify({ parameters: local }))
     });
 
     // Init help
