@@ -234,24 +234,30 @@
 
 
 //NUEVO
-SM.param_callbacks["led_state"] = SM.led_state;
+ // Handler para el estado del LED
+    SM.led_state = false;
 
- SM.led_state = false;
-   // program checks if led_state button was clicked
-   $('#led_state').click(function() {
+    // Función que cambia el estado del LED
+    SM.change_led_state = function() {
+        if (SM.led_state == true) {
+            $('#led_on').hide();
+            $('#led_off').show();
+            SM.led_state = false;
+        } else {
+            $('#led_off').hide();
+            $('#led_on').show();
+            SM.led_state = true;
+        }
+    };
 
-       // changes local led state
-       if (SM.led_state == true){
-           $('#led_on').hide();
-           $('#led_off').show();
-           SM.led_state = false;
-       }
-       else{
-           $('#led_off').hide();
-           $('#led_on').show();
-           SM.led_state = true;
-       }    
-   });
+ // Asignar el callback para led_state después de que la función SM.change_led_state esté definida
+    SM.param_callbacks["led_state"] = SM.change_led_state;
+
+    // Programa que verifica si se hizo clic en el botón de led_state
+    $('#led_state').click(function() {
+        SM.parametersCache["led_state"] = { value: SM.led_state ? 0 : 1 };
+        SM.sendParameters();
+    });
 
 //END NUEVO
 
