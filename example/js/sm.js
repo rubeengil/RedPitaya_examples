@@ -13,28 +13,6 @@
     }
 })();
 
-APP.led_state = false;
-
-   // program checks if led_state button was clicked
-   $('#led_state').click(function() {
-
-       // changes local led state
-       if (APP.led_state == true){
-           $('#led_on').hide();
-           $('#led_off').show();
-           APP.led_state = false;
-       }
-       else{
-           $('#led_off').hide();
-           $('#led_on').show();
-           APP.led_state = true;
-       }
-
-       // sends current led state to backend
-       var local = {};
-       local['LED_STATE'] = { value: APP.led_state };
-       APP.ws.send(JSON.stringify({ parameters: local }));
-   });
 
 (function(SM, $, undefined) {
 
