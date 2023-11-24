@@ -97,16 +97,7 @@ void UpdateParams(void)
 {
     std::fstream fs;
     fs.open ("/tmp/debug.log", std::fstream::in | std::fstream::out | std::fstream::app);
-	ledState.Update();
-	if (ledState.Value() == false)
-	{
-	    rp_DpinSetState(RP_LED0, RP_LOW);
-	}
-	else
-	{
-	    rp_DpinSetState(RP_LED0, RP_HIGH);
-	}
-	
+		
 	if (ss_bool_p.IsNewValue())
 	{
 		ss_bool_p.Update();
