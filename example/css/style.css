@@ -313,3 +313,16 @@ select {
     width: 150px;
     flex-grow: 0;
 }
+#led_off {
+    color: #F00;
+}
+
+#led_on {
+    display: none;
+    color: #0F0;
+}
+
+#led_state {
+    margin-top: 20px;
+    padding: 10px;
+}
