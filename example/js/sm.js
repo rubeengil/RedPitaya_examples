@@ -271,9 +271,7 @@ $(function() {
         } else {
             led.classList.add('on');
         }
-        SM.sendParameters();
-
-        
+        SM.sendParameters();     
     });
 
     // Init help
