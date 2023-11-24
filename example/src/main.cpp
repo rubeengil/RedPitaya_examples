@@ -134,10 +134,21 @@ void UpdateParams(void)
 
 void PostUpdateSignals(){}
 
-void OnNewParams(void)
+
+void OnNewParams(void) 
 {
-	UpdateParams();
+    ledState.Update();
+
+    if (ledState.Value() == false)
+    {
+        rp_DpinSetState(RP_LED0, RP_LOW); 
+    }
+    else
+    {
+        rp_DpinSetState(RP_LED0, RP_HIGH); 
+    }
 }
+
 
 void OnNewSignals(void)
 {
