@@ -230,22 +230,9 @@
     SM.param_callbacks["SS_STRING_P"] = SM.change_text;
     SM.param_callbacks["SS_INT_P"] = SM.change_int;
 
-
-
-
-//NUEVO
-document.getElementById('toggleButton').addEventListener('click', function () {
-    var led = document.getElementById('led');
-    if (led.classList.contains('on')) {
-        led.classList.remove('on');
-    } else {
-        led.classList.add('on');
-    }
-});
-
 }(window.SM = window.SM || {}, jQuery));
 
-//END NUEVO
+
 
 // Page onload event handler
 $(function() {
