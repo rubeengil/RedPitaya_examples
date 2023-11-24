@@ -17,7 +17,7 @@ extern "C" {
 
 
 //Parameters
-//CBooleanParameter ledState("toggleButton", CBaseParameter::RW, false, 0);
+
 CBooleanParameter 	ss_bool_p 	(	"SS_BOOL_P", 	CBaseParameter::RW, false,	0);
 CIntParameter		ss_int_p 	(	"SS_INT_P", 	CBaseParameter::RW, 100,	0,	1,65535);
 CStringParameter    ss_string_p	(	"SS_STRING_P",	CBaseParameter::RW, "",		0);
@@ -97,7 +97,7 @@ void UpdateParams(void)
 {
     std::fstream fs;
     fs.open ("/tmp/debug.log", std::fstream::in | std::fstream::out | std::fstream::app);
-		
+
 	if (ss_bool_p.IsNewValue())
 	{
 		ss_bool_p.Update();
@@ -125,16 +125,12 @@ void UpdateParams(void)
 
 void PostUpdateSignals(){}
 
-
-void OnNewParams(void) 
+void OnNewParams(void)
 {
-   UpdateParams();
+	UpdateParams();
 }
-
 
 void OnNewSignals(void)
 {
 	UpdateSignals();
 }
-
-
