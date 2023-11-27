@@ -107,11 +107,11 @@ void UpdateParams(void)
 		ledState.Update();
 	    	if (ledState.Value() == false)
 	   	{ 	
-			rp_DpinSetState(RP_LED0, RP_LOW); 
+			rp_DpinSetState(RP_LED2, RP_LOW); 
 	    	}
 	    	else
 	    	{
-			rp_DpinSetState(RP_LED0, RP_HIGH); 
+			rp_DpinSetState(RP_LED2, RP_HIGH); 
 	    	}
 	}
 
