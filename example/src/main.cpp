@@ -23,7 +23,7 @@ extern "C" {
 
 
 //Parameters
-CBooleanParameter ledState("toggleButton", CBaseParameter::RW, false, 0);
+rp_pinState_t  ledState("toggleButton", CBaseParameter::RW, false, 0);
 CBooleanParameter 	ss_bool_p 	(	"SS_BOOL_P", 	CBaseParameter::RW, false,	0);
 CIntParameter		ss_int_p 	(	"SS_INT_P", 	CBaseParameter::RW, 100,	0,	1,65535);
 CStringParameter    ss_string_p	(	"SS_STRING_P",	CBaseParameter::RW, "",		0);
